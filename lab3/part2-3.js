@@ -30,7 +30,6 @@ function draw(identificator)
     {
         node.setAttribute('draggable' , 'true');
         node.addEventListener('dragstart' , dragStart);
-        // node.addEventListener('mouseout' , (event)=> event.preventDefault())
     }
     else
     {
