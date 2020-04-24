@@ -1,0 +1,74 @@
+html , body 
+{
+	width: 100%;
+	height: 100%;
+	margin: 0 0 0 0;
+}
+
+.main
+{
+	background-color: grey;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	min-height: 100%;
+}
+
+.content
+{
+	padding: 0px 10px 10px 10px;
+	box-shadow: 0 0 5px 2px;
+	background-color: white;
+	min-height: 100%;
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+h1 
+{
+	color: #210187;
+	text-align: center;
+}
+
+h2 
+{
+	text-align: center;
+}
+
+.H1-2
+{
+	margin-top: 0px;
+}
+
+.one-three
+{
+	display: flex;
+	justify-content: center;
+}
+
+.one , .two , .three
+{
+	width: 33%;
+}
+
+.four
+{
+	display: flex;
+	justify-content: space-around;
+}
+
+.list
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.five
+{
+	display: flex;
+	justify-content: space-around;
+}

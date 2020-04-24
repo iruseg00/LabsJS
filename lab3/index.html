@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab 3</title>
+</head>
+<body>
+<div class="main">
+    <div class="window">
+        <div class="buttons">
+            <button class="action" onclick="show(1)">Часть №1</button>
+            <button class="action" onclick="show(2)">Часть №2</button>
+            <button class="action" onclick="show(3)">Часть №3</button>
+        </div>
+        <div class="pane">
+            <div id='part1' class="part">
+                <div id="out" class="out"></div>
+                <div class="controllers">
+                    <form name="forma1" class="forma" onsubmit="validateForm()">
+                        <div>
+                            <div>
+                                <input type="radio" id="radioButton" value="start" name="whereAdd" class="radioBouttons">
+                                <label for="start">В начало</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="radioButton" value="end"   name="whereAdd" class="radioBouttons">
+                                <label for="end">В конец</label>
+                            </div>
+                        </div>    
+                        <input class="inputText" type="text" placeholder=" текст" name="text">
+                        <input class="inputText" type="text" placeholder=" цвет"  name="color">
+                        <button class="formButtons" type="submit">Добавить</button>
+                    </form>
+                    <button class="formButtons" onclick="statistics()">Cтатистика</button>
+                </div>
+            </div>
+            <div id='part2' class="part">
+                <div id="canvas" class="out"></div>
+                <button class="formButtons addButton" onclick="draw('canvas')">Добавить</button>
+            </div>
+            <div id='part3' class="part">
+                <div id="canvas2" class="out"  
+                ondrop="dragDrop(event)" 
+                ondragover="dragOver(event)"
+                ></div>
+                <button class="formButtons addButton" onclick="draw('canvas2')">Добавить</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="part1.js"></script>
+<script src="part2-3.js"></script>
+</body>
+</html>
