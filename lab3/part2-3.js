@@ -6,11 +6,11 @@ const PALITRa =
     'blue',
     'white'
 ];
-document.addEventListener('keydown' , keydown);
-const getRandomInt = (max)=> (Math.random() * max).toFixed();
 var id = 0;
 var bufferId = 0;
 var current;
+const getRandomInt = (max)=> (Math.random() * max).toFixed();
+document.addEventListener('keydown' , keydown);
 
 function draw(identificator) 
 {
@@ -42,11 +42,9 @@ function draw(identificator)
 
 function accentuation()
 {
-    var prevElement = document.getElementById(bufferId);
+    document.getElementById(bufferId).classList.remove("accentuation");
     bufferId = this.id;
-    prevElement.classList.remove("accentuation");
-    var element = document.getElementById(this.id);
-    element.classList.add("accentuation");
+    document.getElementById(this.id).classList.add("accentuation");
 }
 
 function keydown()
