@@ -25,7 +25,7 @@ services:
       dockerfile: prod.Dockerfile  
     restart: always
     ports:
-      - 11311:11311
+      - 80:11311
     # volumes:
     #   - /home/bot_log:/usr/src/app/logs/output_log
     # depends_on:
