@@ -1,2 +1,4 @@
 require('dotenv').config();
-const fastify = require("./server.js");
+require("./observer.js")();
+// require("./server1.js");
+

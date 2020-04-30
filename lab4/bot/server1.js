@@ -9,10 +9,10 @@ fastify.listen(11311, (err, address) =>
 
 fastify.use(bodyParser.json({ limit: "10mb" }));
 
-fastify.post('/', (request, reply)=> {
-    request.log('request type:' + request.body.type + "group_id: " + request.body.group_id)
-    reply.code(200);
-    if(request.body.type == 'confirmation') reply.send("bd1e652c");
-})
+// fastify.post('/', (request, reply)=> {
+//     console.log("body: -->" + request.body)
+//     reply.code(200);
+//     reply.send("ok");
+// })
 
 module.exports = fastify;
