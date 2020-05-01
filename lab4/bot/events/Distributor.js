@@ -38,7 +38,7 @@ const listOfEvents =
 function Distributor(updates)
 {
     for(let i = 0; i < updates.length; i++)
-        listOfEvents[updates[i].type](updates[i]);
+        listOfEvents[updates[i].type](updates[i].object);
 }
 
 module.exports = Distributor;
