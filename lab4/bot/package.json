@@ -4,6 +4,7 @@
   "description": "",
   "main": "VkBot.js",
   "scripts": {
+    "start": "node VkBot.js",
     "start:prod": "node VkBot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

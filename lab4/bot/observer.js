@@ -3,6 +3,7 @@ const Distributor = require("./events/Distributor.js");
 
 var getLongPollServer = 
 `https://api.vk.com/method/groups.getLongPollServer?group_id=${process.env.GROUP_ID}&v=${process.env.VERSION}&access_token=${process.env.TOKEN}`;
+
 function init()
 {
     axios.get(getLongPollServer)
