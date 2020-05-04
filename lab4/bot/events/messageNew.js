@@ -1,17 +1,30 @@
 const axios = require("axios");
-var message = 'Danic.';
-var random_id = 0;
+var message , random_id = 0;
+
+const params = new URLSearchParams();
+params.append('access_token', process.env.TOKEN);
+params.append('v', process.env.VERSION);
 
 function messageNew(object)
 {
     if(object.message.text.indexOf('Тед,') == 0)
     {
-        var text = object.message.text.slice(4);
-        console.log(text)
+        var text = object.message.text.slice(4).toLowerCase();
+        if(text.indexOf('функционал') != -1) message = skils;
         random_id++;
-        return axios.get(`https://api.vk.com/method/messages.send?peer_id=${object.message.peer_id}&random_id=${random_id}&message=${message}&access_token=${process.env.TOKEN}&v=${process.env.VERSION}`);
+        params.append('peer_id', object.message.peer_id);
+        params.append('random_id', random_id);
+        params.append('message', message);
+        axios(
+        {
+            method: 'post',
+            url: `https://api.vk.com/method/messages.send`,
+            params
+        })
     }
-    console.log(object)
 }
 
-module.exports = messageNew;
+var skils = `'Расписание' - выдает расписание на день ,
+            'Пара' - выдает информацию о текующей паре `;
+
+module.exports = messageNew;    
