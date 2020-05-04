@@ -1,0 +1,18 @@
+{
+    "development": 
+    {
+      "username": "root",
+      "password": "example",
+      "database": "mongo",
+      "host": "localhost",
+      "dialect": "mongo"
+    },
+    "production": 
+    {
+      "username": "root",
+      "password": "example",
+      "database": "mongo",
+      "host": "db",
+      "dialect": "mongo"
+    }
+  }

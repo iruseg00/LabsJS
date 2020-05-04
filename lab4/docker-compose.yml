@@ -2,15 +2,28 @@ version: "3.7"
 
 services:
   db:
-    image: postgres
+    image: mongo
     restart: always
+    ports:
+      - 27017:27017
     environment:
-      POSTGRES_PASSWORD: trytofindme
-    ports:
-      - 5432:5432
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 5520:8080
+  # compass:
+  #   image: mongo-compass
+  #   restart: always
+  #   # expose:
+  #   #   - 5000
+  #   ports:
+  #     - 5000:5000
+  #   depends_on:
+  #     - db
+
+    # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 5520:8080
+  #   depends_on:
+  #     - db
