@@ -6,7 +6,7 @@ const time = require("../../constants/time").isolation;
 function infoOfPara(peer_id)
 {
     var answer = "";
-    var now = moment().hour(15).minute(50);
+    var now = moment();
     GroupsService.find(peer_id).then(result=>
     {
         var day = result[moment().week() % 2 ? 'oddWeek' : 'week'][moment().format( 'dddd' )];
@@ -38,7 +38,7 @@ function infoOfPara(peer_id)
             }
             return true;
         });
-        console.log(answer)
+
         return send(answer , peer_id); 
     });      
 }

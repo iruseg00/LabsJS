@@ -1,5 +1,5 @@
-var  Groups = require("../db/models/Groups");
-
+var Groups = require("../db/models/Groups");
+var logger = require("../logs/pino")
 class GroupsService
 {
     create(object)
@@ -12,19 +12,17 @@ class GroupsService
         } ,  
         (err, result)=> 
         {
-            if (err) return console.log(err);
-            // console.log(result)
+            if (err) return logger.error(err)
         })
     }
     
     find(peer_id)
     {
         return Groups.findOne({ peer_id },  
-            (err, result)=> 
-            {
-                if (err) return console.log(err);
-                // return result;
-            });
+        (err, result)=> 
+        {
+            if (err) return logger.error(err)
+        })
     }
 }
 

@@ -6,24 +6,6 @@ services:
     restart: always
     ports:
       - 27017:27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+    env_file:
+      - ./bot/.env  
 
-  # compass:
-  #   image: mongo-compass
-  #   restart: always
-  #   # expose:
-  #   #   - 5000
-  #   ports:
-  #     - 5000:5000
-  #   depends_on:
-  #     - db
-
-    # adminer:
-  #   image: adminer
-  #   restart: always
-  #   ports:
-  #     - 5520:8080
-  #   depends_on:
-  #     - db
