@@ -2,15 +2,10 @@ version: "3.7"
 
 services:
   db:
-    image: postgres
+    image: mongo
     restart: always
-    environment:
-      POSTGRES_PASSWORD: trytofindme
     ports:
-      - 5432:5432
+      - 27017:27017
+    env_file:
+      - ./bot/.env  
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 5520:8080

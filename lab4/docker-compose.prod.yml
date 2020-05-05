@@ -1,24 +1,12 @@
 version: "3.7"
 
 services:
-  # db:
-  #   image: postgres
-  #   restart: always
-  #   environment:
-  #     POSTGRES_PASSWORD: trytofindme
-  #   volumes:
-  #     - ./db/db_prod:/var/lib/postgresql/data
+  db:
+    image: mongo
+    restart: always
+    env_file:
+      - ./bot/.env  
 
-
-  # adminer:
-  #   image: adminer
-  #   restart: always
-  #   ports:
-  #     - 5520:8080
-  #   depends_on:
-  #     - db
-
-      
   bot:
     build:
       context: ./bot
@@ -26,7 +14,7 @@ services:
     restart: always
     ports:
       - 11311:11311
-    # volumes:
-    #   - /home/bot_log:/usr/src/app/logs/output_log
-    # depends_on:
-    #   - db
+    volumes:
+      - /home/bot_log:/usr/src/app/logs/output_log
+    depends_on:
+      - db
