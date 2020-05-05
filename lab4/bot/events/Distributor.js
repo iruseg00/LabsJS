@@ -1,6 +1,6 @@
 const listOfEvents =
 {
-    'message_new' : require("./messageNew.js"),
+    'message_new' : require("./messageNew/messageNew.js"),
     'message_reply' : null,
     'message_edit' : null,
     'message_allow' : null,
