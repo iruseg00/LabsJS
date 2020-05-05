@@ -5,7 +5,10 @@ services:
     image: mongo
     restart: always
     env_file:
-      - ./bot/.env  
+      - ./bot/.env
+    volumes:
+      - ./db/db_prod:/var/lib/mongodb/data
+    
 
   bot:
     build:
