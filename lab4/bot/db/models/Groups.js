@@ -11,9 +11,9 @@ var schema = new Schema({
             number: Number,
             para:
             {
-                name: Array,
-                room: Array,
-                lesson: Array
+                name: String,
+                room: String,
+                lesson: String
             }
         } 
     ],
@@ -23,9 +23,9 @@ var schema = new Schema({
             number: Number,
             para:
             {
-                name: Array,
-                room: Array,
-                lesson: Array
+                name: String,
+                room: String,
+                lesson: String
             }
         } 
     ],
@@ -35,9 +35,9 @@ var schema = new Schema({
             number: Number,
             para:
             {
-                name: Array,
-                room: Array,
-                lesson: Array
+                name: String,
+                room: String,
+                lesson: String
             }
         } 
     ],
@@ -47,9 +47,9 @@ var schema = new Schema({
             number: Number,
             para:
             {
-                name: Array,
-                room: Array,
-                lesson: Array
+                name: String,
+                room: String,
+                lesson: String
             }
         } 
     ],
@@ -59,9 +59,9 @@ var schema = new Schema({
             number: Number,
             para:
             {
-                name: Array,
-                room: Array,
-                lesson: Array
+                name: String,
+                room: String,
+                lesson: String
             }
         } 
     ],
@@ -71,9 +71,84 @@ var schema = new Schema({
             number: Number,
             para:
             {
-                name: Array,
-                room: Array,
-                lesson: Array
+                name: String,
+                room: String,
+                lesson: String
+            }
+        } 
+    ],
+  },
+  oddWeek:
+  {
+    Monday: 
+    [
+        {
+            number: Number,
+            para:
+            {
+                name: String,
+                room: String,
+                lesson: String
+            }
+        } 
+    ],
+    Tuesday: 
+    [
+        {
+            number: Number,
+            para:
+            {
+                name: String,
+                room: String,
+                lesson: String
+            }
+        } 
+    ],
+    Wednesday: 
+    [
+        {
+            number: Number,
+            para:
+            {
+                name: String,
+                room: String,
+                lesson: String
+            }
+        } 
+    ],
+    Thursday:
+    [
+        {
+            number: Number,
+            para:
+            {
+                name: String,
+                room: String,
+                lesson: String
+            }
+        } 
+    ],
+    Friday: 
+    [
+        {
+            number: Number,
+            para:
+            {
+                name: String,
+                room: String,
+                lesson: String
+            }
+        } 
+    ],
+    Saturday: 
+    [
+        {
+            number: Number,
+            para:
+            {
+                name: String,
+                room: String,
+                lesson: String
             }
         } 
     ],
