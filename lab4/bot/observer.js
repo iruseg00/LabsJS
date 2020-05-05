@@ -1,6 +1,6 @@
 const axios = require("axios");
 const Distributor = require("./events/Distributor.js");
-
+var logger = require("./logs/pino");
 var getLongPollServer = 
 `https://api.vk.com/method/groups.getLongPollServer?group_id=${process.env.GROUP_ID}&v=${process.env.VERSION}&access_token=${process.env.TOKEN}`;
 
@@ -8,7 +8,7 @@ function init()
 {
     axios.get(getLongPollServer)
         .then( res => Observer(res.data.response))
-        .catch( err => console.log(err));
+        .catch( err => logger.error(err));
 }
 
 function Observer(session)
@@ -27,7 +27,4 @@ function Observer(session)
             })
 }            
 
-module.exports = init;
-// var getLongPollSettings = 
-// `https://api.vk.com/method/groups.getLongPollSettings?group_id=${process.env.GROUP_ID}&v=${process.env.VERSION}&access_token=${process.env.TOKEN}`;
-// axios.get(getLongPollSettings).then(res=>console.log(res.data))  
+module.exports = init; 

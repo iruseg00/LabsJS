@@ -5,7 +5,8 @@ const infoOfPara = require("./infoOfPara");
 
 function messageNew(object)
 {
-    if(object.message.text.indexOf('Тед,') == 0)
+    console.log(object.message.text)
+    if(object.message.text.indexOf('Тед,') == 0 || object.message.text.indexOf('[club192869177') == 0)
     {
         var text = object.message.text.slice(4).toLowerCase();
         if(text.indexOf('функционал') != -1) send(skils , object.message.peer_id);

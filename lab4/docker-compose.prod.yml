@@ -4,17 +4,8 @@ services:
   db:
     image: mongo
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 5520:8080
-    depends_on:
-      - db
+    env_file:
+      - ./bot/.env  
 
   bot:
     build:
@@ -23,7 +14,7 @@ services:
     restart: always
     ports:
       - 11311:11311
-    # volumes:
-    #   - /home/bot_log:/usr/src/app/logs/output_log
+    volumes:
+      - /home/bot_log:/usr/src/app/logs/output_log
     depends_on:
       - db
