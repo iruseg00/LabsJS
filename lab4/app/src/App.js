@@ -2,16 +2,18 @@ import React from 'react';
 import { Router , Switch , Route } from "react-router-dom";
 import './App.css';
 import history from "./components/helper/history";
-import Layout from "./components/layout/Layout";
+import Header from "./components/header/Header";
+import TabWeeks from "./components/tabWeeks/TabWeeks";
 
 function App() {
   return (
     <Router history={history}>
+      <Header/>
       <Switch>
         <Route
           exact
           path="/" 
-          component={Layout}
+          component={TabWeeks}
         />
       </Switch> 
     </Router>
