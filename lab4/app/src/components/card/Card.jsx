@@ -18,7 +18,6 @@ export default class Card extends React.Component
     this.altRoom = this.altRoom.bind(this);
     this.altLesson = this.altLesson.bind(this);
     this.altDate = this.altDate.bind(this);
-
     this.card = 
     {
       "one":   { number: 1 , para:{} , alt:{} },
@@ -37,7 +36,6 @@ export default class Card extends React.Component
   altRoom   = (event)=> this.card[event.target.id].alt.room    = event.target.value;
   altLesson = (event)=> this.card[event.target.id].alt.lesson  = event.target.value;
   altDate   = (event)=> this.card[event.target.id].alt.date    = event.target.value;
-
 
   above(number)
   {
