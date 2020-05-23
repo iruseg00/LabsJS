@@ -5,25 +5,11 @@ import style from "./style.module.scss";
 import Card from "../card/Card";
 const { TabPane } = Tabs;
 
-export default class TabWeeks extends React.Component
+class TabWeeks extends React.Component
 {
   constructor(props)
   {
     super(props);
-    this.oddWeek = {};
-    this.week = {};
-    this.weekSetDay = this.weekSetDay.bind(this);
-    this.oddWeekSetDay = this.oddWeekSetDay.bind(this);
-  }
-
-  weekSetDay(day , value)
-  {
-    this.week[day] = value;
-  }
-
-  oddWeekSetDay(day , value)
-  {
-    this.oddWeek[day] = value;
   }
 
   render()
@@ -31,19 +17,90 @@ export default class TabWeeks extends React.Component
     return (
       <div className={style.pane}>  
         <Tabs defaultActiveKey="1" tabBarGutter="30px">
-          <TabPane tab="Чётная неделя" key="1" 
-          className={style.container}>
-            <Card 
-              dayRu={"Понедельник"} 
-              day={"Monday"}
-              weekSetDay={this.weekSetDay}
-            />
+          <TabPane 
+            tab="Чётная неделя" 
+            key="1" 
+            className={style.container}
+          >
+            <div className={style.firstString}>
+              <Card 
+                dayRu={"Понедельник"} 
+                day={"Monday"}
+                week='2'
+              />
+              <Card 
+                dayRu={"Вторник"} 
+                day={"Tuesday"}
+                week='2'
+              />
+              <Card 
+                dayRu={"Среда"} 
+                day={"Wednesday"}
+                week='2'
+              />
+            </div>
+            <div className={style.secondString}>
+              <Card 
+                dayRu={"Четверг"} 
+                day={"Thursday"}
+                week='2'
+              />
+              <Card 
+                dayRu={"Пятница"} 
+                day={"Friday"}
+                week='2'
+              />
+              <Card 
+                dayRu={"Суббота"} 
+                day={"Saturday"}
+                week='2'
+              />
+            </div>
           </TabPane>
-          <TabPane tab="Нечётная неделя" key="2">
-            Content of Tab Pane 2
+          <TabPane 
+          tab="Нечётная неделя" 
+          key="2"
+          className={style.container}
+          >
+            <div className={style.firstString}>
+              <Card 
+                dayRu={"Понедельник"} 
+                day={"Monday"}
+                week='1'
+              />
+              <Card 
+                dayRu={"Вторник"} 
+                day={"Tuesday"}
+                week='1'
+              />
+              <Card 
+                dayRu={"Среда"} 
+                day={"Wednesday"}
+                week='1'
+              />
+            </div>
+            <div className={style.secondString}>
+              <Card 
+                dayRu={"Четверг"} 
+                day={"Thursday"}
+                week='1'
+              />
+              <Card 
+                dayRu={"Пятница"} 
+                day={"Friday"}
+                week='1'
+              />
+              <Card 
+                dayRu={"Суббота"} 
+                day={"Saturday"}
+                week='1'
+              />
+            </div>
           </TabPane>
         </Tabs>
       </div>  
     );
   }  
 }
+
+export default TabWeeks;

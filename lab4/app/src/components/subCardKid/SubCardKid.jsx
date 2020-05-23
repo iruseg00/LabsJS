@@ -2,22 +2,17 @@ import React from 'react';
 import style from "./style.module.scss";
 import 'antd/dist/antd.css';
 import { Input } from 'antd';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarPlus , faUsers } from '@fortawesome/free-solid-svg-icons';
-
+import Icons from "../icons/Icons";
 export default class SubCardKid extends React.Component
 {
   constructor(props)
   {
     super(props);
-    this.para = {};
   }
-  
-  changeFIO = e => this.para.name = e.target.value;
-  changeRoom = e => this.para.room = e.target.value;
 
   render()
   {
+    const id = this.props.id;
     return (
       <div className={style.subCard}>  
         <div className={style.inputs}>
@@ -26,12 +21,14 @@ export default class SubCardKid extends React.Component
                     className={style.disabled}
                     value={this.props.number}
                     disabled={true}
+                    id={id}
                 />
                 <Input 
                     className={style.inputFIO}
                     placeholder="ФИО преподавателя" 
                     maxLength="40"
-                    onChange={this.changeFIO}
+                    onChange={this.props.setFIO}
+                    id={id}
                 />
             </div>
             <div className={style.secondString}>
@@ -39,26 +36,26 @@ export default class SubCardKid extends React.Component
                     className={style.inputRoom}
                     placeholder="Ауд." 
                     maxLength="6"
-                    onChange={this.changeRoom}
+                    onChange={this.props.setRoom}
+                    id={id}
                 />
                 <Input 
                     className={style.inputLesson}
                     placeholder="Предмет" 
                     maxLength="30"
-                    onChange={this.changeRoom}
+                    onChange={this.props.setLesson}
+                    id={id}
                 />
               </div>    
         </div>
-        <div className={style.icons}>
-            <FontAwesomeIcon
-            className={style.icon}
-            icon={faUsers}
-            />
-            <FontAwesomeIcon
-            className={style.icon}
-            icon={faCalendarPlus}
-            />
-        </div>
+        <Icons 
+          id={id} 
+          setDate={this.props.setDate}
+          altDate={this.props.altDate}
+          altLesson={this.props.altLesson}
+          altRoom={this.props.altRoom}
+          altFIO={this.props.altFIO}
+        />
       </div>  
     );
   }  

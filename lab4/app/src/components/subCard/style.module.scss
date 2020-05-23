@@ -1,6 +1,5 @@
 $heightInput: 32px;
 
-
 .subCard
 {
     display: flex;
@@ -21,7 +20,7 @@ $heightInput: 32px;
 
 .inputFIO
 {
-    width: 160px;
+    width: 140px;
 }
 
 .inputRoom
@@ -34,9 +33,9 @@ $heightInput: 32px;
     width: 140px;
 }
 
-.inputFIO , .inputRoom , .inputLesson , .icons
+.inputFIO , .inputRoom , .inputLesson 
 {
-    height: $heightInput;
+    height: $heightInput !important;
 }
 
 .firstString , .secondString
@@ -46,17 +45,7 @@ $heightInput: 32px;
     justify-content: space-around;
 }
 
-.icons
+.selectBlock
 {
-    height: 100%;
-    width: 15%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.icon
-{
-    font-size: 20px;
+    width: 70px;
 }
