@@ -1,0 +1,28 @@
+$bgHeader: #1890FF;
+$heightHeader: 60px;
+$sizeLogoName: 30px;
+$familyLogoName: Arial, Helvetica, sans-serif;
+
+.links
+{
+    text-decoration: none;
+}
+
+.navigation
+{
+    background-color: $bgHeader;
+    width: 100%;
+    height: $heightHeader;
+    box-shadow: 0 0 10px 2px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logoName
+{
+    color: white;
+    font-size: $sizeLogoName;
+    font-family: $familyLogoName;
+}
