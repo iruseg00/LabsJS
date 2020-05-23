@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router , Switch , Route } from "react-router-dom";
 import './App.css';
-import history from "./components/helper/history";
+import history from "./helper/history";
 import { Provider }  from "react-redux";
 import Header from "./components/header/Header";
 import Table from "./components/table/Table";
