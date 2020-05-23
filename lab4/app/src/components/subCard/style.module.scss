@@ -1,6 +1,5 @@
 $heightInput: 32px;
 
-
 .subCard
 {
     display: flex;
@@ -21,7 +20,7 @@ $heightInput: 32px;
 
 .inputFIO
 {
-    width: 160px;
+    width: 140px;
 }
 
 .inputRoom
@@ -36,7 +35,7 @@ $heightInput: 32px;
 
 .inputFIO , .inputRoom , .inputLesson 
 {
-    height: $heightInput;
+    height: $heightInput !important;
 }
 
 .firstString , .secondString
@@ -46,3 +45,7 @@ $heightInput: 32px;
     justify-content: space-around;
 }
 
+.selectBlock
+{
+    width: 70px;
+}

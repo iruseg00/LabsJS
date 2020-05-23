@@ -7,7 +7,6 @@ import { faCalendarPlus , faUsers } from '@fortawesome/free-solid-svg-icons';
 export default function Icons(props)
 {
     var id = props.id;
-    console.log(props)
     return (
       <div className={style.icons}>
         <Popover 

@@ -2,8 +2,6 @@ import React from 'react';
 import style from "./style.module.scss";
 import 'antd/dist/antd.css';
 import { Input } from 'antd';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarPlus , faUsers } from '@fortawesome/free-solid-svg-icons';
 import Icons from "../icons/Icons";
 export default class SubCardKid extends React.Component
 {

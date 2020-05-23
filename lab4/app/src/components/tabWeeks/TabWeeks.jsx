@@ -5,7 +5,7 @@ import style from "./style.module.scss";
 import Card from "../card/Card";
 const { TabPane } = Tabs;
 
-export default class TabWeeks extends React.Component
+class TabWeeks extends React.Component
 {
   constructor(props)
   {
@@ -26,30 +26,36 @@ export default class TabWeeks extends React.Component
               <Card 
                 dayRu={"Понедельник"} 
                 day={"Monday"}
+                week='2'
               />
               <Card 
                 dayRu={"Вторник"} 
                 day={"Tuesday"}
+                week='2'
               />
               <Card 
                 dayRu={"Среда"} 
                 day={"Wednesday"}
+                week='2'
               />
             </div>
             <div className={style.secondString}>
-            <Card 
-              dayRu={"Четверг"} 
-              day={"Thursday"}
-            />
-            <Card 
-              dayRu={"Пятница"} 
-              day={"Friday"}
-            />
-            <Card 
-              dayRu={"Суббота"} 
-              day={"Saturday"}
-            />
-          </div>
+              <Card 
+                dayRu={"Четверг"} 
+                day={"Thursday"}
+                week='2'
+              />
+              <Card 
+                dayRu={"Пятница"} 
+                day={"Friday"}
+                week='2'
+              />
+              <Card 
+                dayRu={"Суббота"} 
+                day={"Saturday"}
+                week='2'
+              />
+            </div>
           </TabPane>
           <TabPane 
           tab="Нечётная неделя" 
@@ -60,28 +66,34 @@ export default class TabWeeks extends React.Component
               <Card 
                 dayRu={"Понедельник"} 
                 day={"Monday"}
+                week='1'
               />
               <Card 
                 dayRu={"Вторник"} 
                 day={"Tuesday"}
+                week='1'
               />
               <Card 
                 dayRu={"Среда"} 
                 day={"Wednesday"}
+                week='1'
               />
             </div>
             <div className={style.secondString}>
               <Card 
                 dayRu={"Четверг"} 
                 day={"Thursday"}
+                week='1'
               />
               <Card 
                 dayRu={"Пятница"} 
                 day={"Friday"}
+                week='1'
               />
               <Card 
                 dayRu={"Суббота"} 
                 day={"Saturday"}
+                week='1'
               />
             </div>
           </TabPane>
@@ -90,3 +102,5 @@ export default class TabWeeks extends React.Component
     );
   }  
 }
+
+export default TabWeeks;

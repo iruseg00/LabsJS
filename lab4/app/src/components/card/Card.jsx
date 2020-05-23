@@ -2,13 +2,22 @@ import React from 'react';
 import style from "./style.module.scss";
 import SubCard from "../subCard/SubCard";
 import SubCardKid from "../subCardKid/SubCardKid";
-
-export default class Card extends React.Component
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { setWeek , setOddWeek } from "../../redux/actions/action";
+class Card extends React.Component
 {
+  componentDidUpdate(prevProps) 
+  {
+    if (prevProps.send !== this.props.send) 
+      this.setState({readyToSend: this.props.send})
+  }
+
   constructor(props)
   {
     super(props);
-    this.state = { number: 1};
+    this.putInStorage = this.putInStorage.bind(this);
+    this.state = { number: 1 , readyToSend: false };
     this.above = this.above.bind(this);
     this.setFIO = this.setFIO.bind(this);
     this.setRoom = this.setRoom.bind(this);
@@ -42,8 +51,21 @@ export default class Card extends React.Component
     this.setState({ number })
   }
 
+  putInStorage()
+  {
+    let week = {};
+    let array = [];
+    for (let key in this.card)
+      array.push(this.card[key]);
+    week[this.props.day] = array;
+    if(this.props.week == 2)
+      this.props.setWeek(week);
+    else this.props.setOddWeek(week);
+  }
+
   render()
   {
+    if(this.state.readyToSend) this.putInStorage();
     let number = +this.state.number; 
     this.card.one.number = number;
     this.card.two.number = number + 1;
@@ -126,3 +148,17 @@ export default class Card extends React.Component
     );
   }  
 }
+
+function mapStateToProps(state)
+{
+  return { 
+    send: state.send
+  }
+}
+
+function mapDispatchToProps(dispatch)
+{
+  return bindActionCreators({setWeek , setOddWeek} , dispatch);
+}
+
+export default connect(mapStateToProps , mapDispatchToProps)(Card);

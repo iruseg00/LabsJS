@@ -4,19 +4,22 @@ import './App.css';
 import history from "./components/helper/history";
 import { Provider }  from "react-redux";
 import Header from "./components/header/Header";
-import TabWeeks from "./components/tabWeeks/TabWeeks";
+import Table from "./components/table/Table";
+import Store from "./redux/store/store"
 
 function App() {
   return (
     <Router history={history}>
       <Header/>
-      <Switch>
-        <Route
-          exact
-          path="/" 
-          component={TabWeeks}
-        />
-      </Switch> 
+      <Provider store={Store}>
+        <Switch>
+          <Route
+            exact
+            path="/" 
+            component={Table}
+          />
+        </Switch> 
+      </Provider>
     </Router>
   );
 }

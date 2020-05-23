@@ -20,7 +20,8 @@ export default class SubCard extends React.Component
       <div className={style.subCard}>  
         <div className={style.inputs}>
           <div className={style.firstString}>
-            <Select 
+            <Select
+              className={style.selectBlock} 
               size="middle"
               id={id}
               value={this.props.number}
