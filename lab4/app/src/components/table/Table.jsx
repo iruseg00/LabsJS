@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import TabWeeks from "../tabWeeks/TabWeeks";
 import { Input , Button } from "antd";
 import { readyToSend } from "../../redux/actions/action"
-
+import api from "../../helper/api";
 
 class Table extends React.Component
 {
@@ -26,6 +26,7 @@ class Table extends React.Component
     this.props.readyToSend(true);
     setTimeout(()=>
     {
+      api("78.47.43.112:49999/bot/regisration" , "POST" , this.props.week);
       this.props.readyToSend(false);
     } , 0)
   }
