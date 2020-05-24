@@ -1,4 +1,4 @@
-import axios from "./axios";
+import axios from "axios";
 
 const api = async (url, method = "GET", data) => 
 {
@@ -9,11 +9,11 @@ const api = async (url, method = "GET", data) =>
     case "POST":
       return axios.post(url, data);
     case "PUT":
-      return axios.put(url, data, config);
+      return axios.put(url, data);
     case "DELETE":
-      return axios.delete(url, config);
+      return axios.delete(url);
     default:
-      return axios.get(url, config);
+      return axios.get(url);
   }
 };
 export default api;

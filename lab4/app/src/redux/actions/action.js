@@ -1,7 +1,6 @@
 import {
   SET_ODD_WEEK ,
   SET_WEEK ,
-  SET_WEEKS ,
   READY_TO_SEND
 } from "../actionTypes/actionTypes";
 
