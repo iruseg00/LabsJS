@@ -12,7 +12,9 @@ class GroupsService
         } ,  
         (err, result)=> 
         {
-            if (err) return logger.error(err)
+            if (err) return logger.error(err);
+            console.log(result._id)
+            return result;
         })
     }
     
@@ -21,8 +23,30 @@ class GroupsService
         return Groups.findOne({ peer_id },  
         (err, result)=> 
         {
-            if (err) return logger.error(err)
+            if (err) return logger.error(err);
+            return result;
         })
+    }
+
+    findByGroupId(group_id)
+    {
+        return Groups.findOne({ _id: group_id },  
+        (err, result)=> 
+        {
+            if (err) return logger.error(err);
+            return result;
+        })
+    }
+
+    findByIdAndUpdate(id , update)
+    {
+        return Groups.findByIdAndUpdate(id , update ,  
+            (err, result)=> 
+            {
+                if (err) return logger.error(err);
+                console.log(result)
+                return result;
+            })
     }
 }
 
