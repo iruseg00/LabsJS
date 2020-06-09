@@ -1,0 +1,38 @@
+
+
+
+.content
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.send
+{
+    width: 500px;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.id
+{
+    width: 300px !important;
+}
+
+@media screen and (max-width: 650px)
+{
+    .send
+    {
+        width: 320px;
+        flex-direction: column;
+    }
+
+    .id
+    {
+        width: 270px !important;
+    }
+}

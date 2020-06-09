@@ -1,0 +1,50 @@
+$familyTitleCard: Arial, Helvetica, sans-serif;
+$sizeTitleCard: 14px;
+$bgTitleCard: #1890FF;
+$hightTitleCard: 50px;
+$borderCard: 10px;
+$bgContext: #C0C0C0;
+$widthCard: 280px;
+$heightCard: auto;
+$heightContext: 415px;
+
+h1
+{
+    color:white;
+}
+
+.card
+{
+    width: $widthCard;
+    height: $heightCard;
+}
+
+.title
+{
+    background-color: $bgTitleCard;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: $sizeTitleCard;
+    font-family: $familyTitleCard;
+    border-top-left-radius: $borderCard;
+    border-top-right-radius: $borderCard;
+    width: 100%;
+    height: $hightTitleCard;
+}
+
+.context
+{
+    border: solid 2px $bgTitleCard;
+    height: $heightContext;
+    width: 100%;
+    background-color: $bgContext;
+    border-bottom-left-radius:  $borderCard;
+    border-bottom-right-radius: $borderCard;
+}
+
+.line
+{
+    border: solid 1px $bgTitleCard;
+    margin: 0;
+}

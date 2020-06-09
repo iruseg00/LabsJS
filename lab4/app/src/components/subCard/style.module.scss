@@ -1,0 +1,51 @@
+$heightInput: 32px;
+
+.subCard
+{
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+    width: 100%;
+}
+
+.inputs
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 100%;
+    width: 85%;
+}
+
+.inputFIO
+{
+    width: 140px;
+}
+
+.inputRoom
+{
+    width: 70px;
+}
+
+.inputLesson
+{
+    width: 140px;
+}
+
+.inputFIO , .inputRoom , .inputLesson 
+{
+    height: $heightInput !important;
+}
+
+.firstString , .secondString
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.selectBlock
+{
+    width: 70px;
+}
