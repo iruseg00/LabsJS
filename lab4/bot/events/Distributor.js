@@ -1,3 +1,5 @@
+const logger = require("../logs/pino");
+
 const listOfEvents =
 {
     'message_new' : require("./messageNew/messageNew.js"),
@@ -37,8 +39,21 @@ const listOfEvents =
 
 function Distributor(updates)
 {
+    console.log(updates)
+    console.log(updates[0].object)
+
     for(let i = 0; i < updates.length; i++)
-        listOfEvents[updates[i].type](updates[i].object);
+    {
+        try 
+        {
+            listOfEvents[updates[i].type](updates[i].object);    
+        } 
+        catch (error) 
+        {
+            logger.warn(error);    
+        }
+    }
+        
 }
 
 module.exports = Distributor;

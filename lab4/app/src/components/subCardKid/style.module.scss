@@ -1,0 +1,67 @@
+$heightInput: 32px;
+
+
+.subCard
+{
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+    width: 100%;
+}
+
+.disabled
+{
+    width: 70px;
+}
+
+.inputs
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 100%;
+    width: 85%;
+}
+
+.inputFIO
+{
+    width: 140px;
+}
+
+.inputRoom
+{
+    width: 70px;
+}
+
+.inputLesson
+{
+    width: 140px;
+}
+
+.inputFIO , .inputRoom , .inputLesson , .icons
+{
+    height: $heightInput;
+}
+
+.firstString , .secondString
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icons
+{
+    height: 100%;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icon
+{
+    font-size: 20px;
+}
