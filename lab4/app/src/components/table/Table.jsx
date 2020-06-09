@@ -25,8 +25,8 @@ class Table extends React.Component
   {
     this.props.readyToSend(true);
     setTimeout(()=>
-    {
-      api("78.47.43.112:49999/bot/regisration" , "POST" , this.props.week);
+    {//78.47.43.112
+      api("http://127.0.0.1:11311/bot/table" , "POST" , this.props.week);
       this.props.readyToSend(false);
     } , 0)
   }
