@@ -21,3 +21,21 @@ services:
       - /home/bot_log:/usr/src/app/logs/output_log
     depends_on:
       - db
+
+  
+  app:
+    build:
+      context: ./app
+      dockerfile: prod.Dockerfile
+    restart: always
+    ports:
+      - 11310:80
+
+
+  # web:
+  #   image: nginx
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/default_nginx.conf
+  #   ports:
+  #     - 80:80
+  #   command: /bin/bash -c nginx -g 'daemon off;'"
